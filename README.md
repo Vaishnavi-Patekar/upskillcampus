@@ -24,5 +24,6 @@ More features, modules, and UI enhancements will be added soon.
 - Service management dashboard  
 - Data analytics and reporting section  
 - Responsive UI and improved UX design
+- Payment Gateway Integration
 
 ---
