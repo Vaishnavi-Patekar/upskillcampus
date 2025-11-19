@@ -7,6 +7,11 @@ import serviceRoutes from "./routes/serviceRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import bookingRoutes from "./routes/bookingRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
+
+
+
 console.log("📌 Starting server.js...");
 
 import cartRoutes from "./routes/cartRoutes.js";
@@ -27,7 +32,8 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
-
+app.use("/api/booking", bookingRoutes);
+app.use("/api/booking", paymentRoutes);
 console.log("🔗 Registering /api/cart route...");
 
 // Test route
