@@ -1,17 +1,3 @@
-// import mongoose from "mongoose";
-
-// const reviewSchema = new mongoose.Schema({
-//   customerId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-//   serviceId: { type: mongoose.Schema.Types.ObjectId, ref: "Service", required: true },
-//   rating: { type: Number, min: 1, max: 5 },
-//   comment: { type: String },
-//   createdAt: { type: Date, default: Date.now }
-// });
-
-// export default mongoose.model("Review", reviewSchema);
-
-
-
 import mongoose from "mongoose";
 
 const reviewSchema = new mongoose.Schema({

@@ -15,9 +15,7 @@ export default function CustomerDashboard({ user }) {
     fetchAllServices();
   }, []);
 
-  /* ---------------------------------------------
-      FETCH ALL SERVICES
-  ----------------------------------------------*/
+ 
   const fetchAllServices = async () => {
     try {
       const res = await API.get("/services");
@@ -28,9 +26,7 @@ export default function CustomerDashboard({ user }) {
     }
   };
 
-  /* ---------------------------------------------
-      FETCH BY CATEGORY
-  ----------------------------------------------*/
+
   const fetchCategoryServices = async (category) => {
     if (category === "all") {
       setServices(allServices);
@@ -45,18 +41,13 @@ export default function CustomerDashboard({ user }) {
     }
   };
 
-  /* ---------------------------------------------
-      CATEGORY CHANGE
-  ----------------------------------------------*/
   const handleCategoryChange = (e) => {
     const category = e.target.value;
     setSelectedCategory(category);
     fetchCategoryServices(category);
   };
 
-  /* ---------------------------------------------
-      SORTING FUNCTION
-  ----------------------------------------------*/
+  
   const handleSort = (type) => {
     setSortType(type);
 
@@ -68,16 +59,10 @@ export default function CustomerDashboard({ user }) {
     setServices(sorted);
   };
 
-  /* ---------------------------------------------
-      SEARCH FILTER
-  ----------------------------------------------*/
   const filteredServices = services.filter((s) =>
     s.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  /* ---------------------------------------------
-      BOOK NOW
-  ----------------------------------------------*/
   
 const handleBooking = (service) => {
   navigate("/checkout", { state: { service } });
@@ -185,12 +170,7 @@ const addToCart = async (serviceId) => {
   Add to Cart 🛒
 </button>
 
-                {/* <button
-                  className="book-btn"
-                  onClick={() => handleBooking(s._id)}
-                >
-                  Book Now
-                </button> */}
+              
                 <button className="book-btn" onClick={() => handleBooking(s)}>
   Book Now
 </button>

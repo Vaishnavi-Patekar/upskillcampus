@@ -47,20 +47,6 @@ router.post("/add", protect, async (req, res) => {
   }
 });
 
-/* -------------------------
-   GET USER CART
--------------------------- */
-// router.get("/", protect, async (req, res) => {
-//   try {
-//     const cart = await Cart.findOne({ user: req.user._id })
-//       .populate("items.service");
-
-//     res.json(cart || { items: [] });
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ message: "Failed to fetch cart", error: err.message });
-//   }
-// });
 
 
 router.get("/", protect, async (req, res) => {

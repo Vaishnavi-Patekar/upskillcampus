@@ -17,24 +17,7 @@ API.post("/booking/initiate")
 
   if (!service) return <h2>No service selected</h2>;
 
-//   const handleCheckout = async () => {
-//     try {
-//       setLoading(true);
 
-//       const res = await API.post("/booking/initiate", {
-//         serviceId: service._id,
-//         customerName: name,
-//         phone,
-//         address,
-//         date,
-//         time,
-//       });
-
-//       window.location.href = res.data.paymentUrl; // Razorpay checkout URL
-//     } catch (err) {
-//       alert("Payment initiation failed");
-//     }
-//   };
 
   const handleCheckout = async () => {
   const res = await API.post("/booking/initiate", { serviceId: service._id });

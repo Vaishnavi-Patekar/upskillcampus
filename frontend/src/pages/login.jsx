@@ -24,7 +24,7 @@ export default function Login() {
 
       setMessage("Login successful!");
 
-      // ⭐ ROLE-BASED REDIRECTION ⭐
+  
       if (res.data.user.role === "merchant") {
         navigate("/dashboard");               // merchant dashboard
       } else if (res.data.user.role === "customer") {
