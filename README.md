@@ -9,8 +9,8 @@ The project aims to provide an efficient way for businesses to handle client dat
 - **Frontend:** React.js  
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB  
-
----
+ 
+---  
 
 ### 🚧 Status: Under Development
 This project is currently a **work in progress**.  
