@@ -1,23 +1,31 @@
 import PDFDocument from "pdfkit";
 import fs from "fs";
 
-export default function generateReceiptPDF(booking) {
+export const generateReceipt = (booking) => {
   return new Promise((resolve) => {
-    const path = `receipts/receipt_${booking._id}.pdf`;
+    const fileName = `receipt_${booking._id}.pdf`;
+    const filePath = `./receipts/${fileName}`;
 
-    const doc = new PDFDocument();
-    doc.pipe(fs.createWriteStream(path));
+    const pdf = new PDFDocument();
+    pdf.pipe(fs.createWriteStream(filePath));
 
-    doc.fontSize(20).text("ServiceHub - Booking Receipt");
-    doc.text(`Booking ID: ${booking._id}`);
-    doc.text(`Customer: ${booking.customerName}`);
-    doc.text(`Service: ${booking.service.title}`);
-    doc.text(`Amount Paid: ₹${booking.service.price}`);
-    doc.text(`Payment ID: ${booking.paymentId}`);
-    doc.text(`Date: ${booking.date}`);
+    pdf.fontSize(22).text("Booking Receipt", { align: "center" });
+    pdf.moveDown();
 
-    doc.end();
+    pdf.fontSize(14).text(`Booking ID: ${booking._id}`);
+    pdf.text(`Name: ${booking.customerName}`);
+    pdf.text(`Service: ${booking.serviceId.title}`);
+    pdf.text(`Price: ₹${booking.serviceId.price}`);
+    pdf.text(`Payment ID: ${booking.paymentId}`);
+    pdf.text(`Date: ${booking.date}`);
+    pdf.text(`Time: ${booking.time}`);
+    pdf.text(`Address: ${booking.address}`);
+    
+    pdf.end();
 
-    resolve(path);
+    resolve(filePath);
   });
-}
+};
+
+
+export default generateReceipt;

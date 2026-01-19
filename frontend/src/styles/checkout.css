@@ -1,0 +1,81 @@
+.checkout-page {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.checkout-page h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.checkout-page p {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.checkout-page input,
+.checkout-page textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  transition: 0.3s ease;
+  background: #fafafa;
+}
+
+.checkout-page input:focus,
+.checkout-page textarea:focus {
+  border-color: #5a67d8;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(90, 103, 216, 0.3);
+}
+
+.checkout-page textarea {
+  resize: none;
+  height: 90px;
+}
+
+.checkout-page button {
+  width: 100%;
+  padding: 14px;
+  background: #5a67d8;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.checkout-page button:hover {
+  background: #4349b8;
+}
+
+.checkout-page button:disabled {
+  background: #8f9cf2;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .checkout-page {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .checkout-page h2 {
+    font-size: 22px;
+  }
+}

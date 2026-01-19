@@ -10,7 +10,7 @@ export default function CustomerDashboard({ user }) {
   const [search, setSearch] = useState("");
   const [sortType, setSortType] = useState("none");
  const navigate = useNavigate();
- 
+
   useEffect(() => {
     fetchAllServices();
   }, []);
@@ -78,35 +78,11 @@ export default function CustomerDashboard({ user }) {
   /* ---------------------------------------------
       BOOK NOW
   ----------------------------------------------*/
-  // const handleBooking = async (serviceId) => {
-  //   try {
-  //     const token = localStorage.getItem("token");
-
-  //     await API.post(
-  //       "/booking/create",
-  //       { serviceId },
-  //       { headers: { Authorization: `Bearer ${token}` } }
-  //     );
-
-  //     alert("🎉 Booking successful!");
-  //   } catch (err) {
-  //     console.error("Booking error:", err);
-  //     alert("❌ Booking failed.");
-  //   }
-  // };
+  
 const handleBooking = (service) => {
   navigate("/checkout", { state: { service } });
 };
 
-//   const addToCart = async (serviceId) => {
-//   try {
-//     await API.post("/cart/add", { serviceId });
-//     alert("Added to cart!");
-//   } catch (err) {
-//     console.error("Cart error:", err);
-//     alert("Failed to add to cart");
-//   }
-// };
 
 
 const addToCart = async (serviceId) => {
